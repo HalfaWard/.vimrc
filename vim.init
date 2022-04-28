@@ -1,0 +1,91 @@
+set shell=/bin/bash
+lpangloss/vim-javascriptpangloss/vim-javascriptet mapleader = "\<Space>"
+
+" =============================================================
+" # Plugins
+" =============================================================
+
+set nocompatible
+filetype off
+call plug#begin(stdpath('config') . '/plugged')
+
+" GUI enhancements
+Plug 'itchyny/lightline.vim'
+Plug 'machakann/vim-highlightedyank'
+Plug 'andymass/vim-matchup'
+
+" Fuzzy finder
+Plug 'airblade/vim-rooter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" Themes
+Plug 'joshdick/onedark.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'dracula/vim'
+
+" C#
+Plug 'OmniSharp/omnisharp-vim'
+
+" NerdTree
+Plug 'scrooloose/nerdtree'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+
+call plug#end()
+
+" rust
+let g:rustfmt_autosave = 1
+let g:rustfmt_emit_files = 1
+let g:rustfmt_fail_silently = 0
+let g:rust_clip_command = 'xclip -selection clipboard'
+
+" c#
+let g:OmniSharp_translate_cygwin_wsl = 1
+
+" =============================================================
+" # GUI Settings
+" =============================================================
+
+set guioptions-=T       " Remvoe toolbar
+set vb t_vb=            " No more beeps
+set nofoldenable
+
+set ruler               " Where am I?
+set relativenumber      " Relative linenumber
+set number              " Shows current line number
+set showcmd             " Show (partial) command in status line
+set mouse=a             " Enable mouse usage (all modes) in terminals
+
+" Colors
+set background=dark
+color dracula
+
+" let base16colorspace=256
+" colorscheme base16-default-dark
+
+" let g:airline_theme = 'one'
+set termguicolors
+syntax on
+filetype plugin indent on
+
+" Show hidden characters
+set nolist
+set listchars=nbsp:¬,extends:»,precedes:«,trail:•
+
+" NerdTree
+let g:NERDTreeChDirMode = 2
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeAutoDeleteBuffer = 1
+
+" =============================================================
+" # Keybindings
+" =============================================================
+
+" Quick-save
+nmap <leader>w :w<CR>
+nnoremap <leader>m :NERDTreeToggle<CR>
+nnoremap <leader>M :NERDTreeFind<CR>
