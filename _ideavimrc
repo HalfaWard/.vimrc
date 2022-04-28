@@ -1,0 +1,71 @@
+"////////////////////////////////////"
+"// IdeaVimrc Halvard W. Pettersen //"
+"////////////////////////////////////"
+
+" Source github.com/JetBrains/ideavim "
+
+" Re-source _ideavimrc in Rider "
+" :source ~/_ideavimrc
+nmap <Leader>p :source ~/_ideavimrc<CR>
+
+"-- Plugins -----------------
+set surround
+set ideajoin
+set NERDTree
+set vim-easymotion
+set multiple-cursors
+set highlightedyank
+set paragraph-motion
+" set textobj-entire
+
+"-- Config ------------------
+set number relativenumber
+
+let g:highlightedyank_highlight_duration = "1000"
+
+"-- Mapping ----------------------
+
+" <Leader> based actions
+let mapleader = " "
+
+nmap <leader>n :set rnu!<CR>
+nmap <leader>e :action RenameElement<CR>
+nmap <leader>s :action FilterStructurePopup<CR>
+nmap <leader>i :action GotoImplementation<CR>
+nmap <leader>r :action ChooseRunConfiguration<CR>
+nmap <leader>d :action ChooseDebugConfiguration<CR>
+nmap <leader>b :action Re-Build<CR>
+
+nmap <leader>m :NERDTree<CR>
+
+nmap <leader>tb :action ToggleLineBreakpoint<CR>
+nmap <leader>ttb :action ToggleTemporaryLineBreakpoint<CR>
+
+nmap <leader>ca :action CloseAllEditors<CR>
+nmap <leader>cc :action CloseCurrentEditor<CR>
+ 
+nmap <leader>sc :action ChangeSplitOrientation<CR>
+nmap <leader>sh :action SplitHorizontally<CR>
+nmap <leader>sv :action SplitVertically<CR>
+nmap <leader>gg :action Git.Menu<CR>
+nmap <leader>gb :action Git.Branches<CR>
+nmap <leader>b  :action RebuildSolutionAction<CR>
+nmap <leader>sg :action EditorToggleShowGutterIcons<CR>
+
+nmap <leader>ns     :action NextSplitter<CR>
+nmap <a-n>          :action NextSplitter<CR>
+nmap <leader>ps     :action PrevSplitter<CR>
+nmap <a-p>          :action PrevSplitter<CR>
+
+nmap <c-h>          :action Back<CR>
+nmap <c-l>          :action Forward<CR>
+nmap <c-k>          :action MethodUp<CR>
+nmap <c-j>          :action MethodDown<CR>
+
+
+
+"""""""""""""""""""""""""""
+"" Comments and reminders ""
+""""""""""""""""""""""""""""
+" gd -> Move to definition
+" * -> Find next instance of word hovered
